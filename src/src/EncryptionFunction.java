@@ -3,5 +3,7 @@
  */
 public abstract class EncryptionFunction
 {
-    public abstract byte[] encrypt(byte[] key, byte[] message);
+    public abstract CipherTextSpaceElement encrypt(KeySpaceElement key, MessageSpaceElement message);
+    public abstract Class[] getParameterTypes();
+
 }
