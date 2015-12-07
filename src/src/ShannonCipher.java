@@ -5,6 +5,12 @@ import javafx.util.Pair;
  */
 public class ShannonCipher
 {
+    public Pair<EncryptionFunction, DecryptionFunction> functions;
+    public KeySpace keySpace;
+    public MessageSpace messageSpace;
+    public CipherTextSpace cipherTextSpace;
+
+
     static boolean isShannonCypher(Pair<EncryptionFunction, DecryptionFunction> candidate)
     {
         //Not every combination is tested?! Can this truly ever be complete?

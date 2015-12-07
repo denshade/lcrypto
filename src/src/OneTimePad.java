@@ -1,5 +1,6 @@
 import javafx.util.Pair;
 
+import java.util.BitSet;
 import java.util.function.Function;
 
 /**
@@ -13,14 +14,17 @@ public class OneTimePad extends ShannonCipher {
         }
         for (Class parameter : candidate.getKey().getParameterTypes())
         {
-            //Very limited ways of asking that the parameters are of type
-        }
-        Function f = new Function() {
-            @Override
-            public Object apply(Object o) {
-                return null;
+            if (!parameter.equals(BitSet.class))
+            {
+                return false;
             }
+            //The BitSet must have a specific size.
+            //Very limited ways of asking that the parameters are of type
+            //It's not because a pair doesn't explicitly agree to the proposed interfaces it is incorrect.
+            //A implementer that happens to agree to the interface is easier to agree, others would have to adapt
+            //by adjusting wrapping the code into the interface.
         }
+
         return true;
     }
 }
